@@ -1,0 +1,99 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="song" class="controller.ListSongActionSupport">
+            <result name="success">song.jsp</result>
+        </action>
+        <action name="album" class="controller.ListAlbumActionSupport">
+            <result name="success">albums.jsp</result>
+        </action>
+        <action name="songofalbum" class="controller.ListSongActionSupport" method="songOfAlbum">
+            <result name="success">songofalbum.jsp</result>
+        </action>
+        <action name="login" class="controller.LoginActionSupport">
+            <result name="success">home.jsp</result>
+            <result name="fail" type="redirect">login.jsp</result>
+        </action>
+        <action name="register" class="controller.RegisterActionSupport">
+            <result name="success">login.jsp</result>
+            <result name="fail" type="redirect">register.jsp</result>
+        </action>
+        <action name="logout" class="controller.LoginActionSupport" method="logout">
+            <result name="success">home.jsp</result>
+        </action>
+        <action name="addfavorite" class="controller.FavoriteActionSupport">
+            <result name="success" >song.jsp</result>
+        </action>
+        <action name="addfavorite2" class="controller.FavoriteActionSupport" method="favoriteSongOfAlbum">
+            <result name="success" >songofalbum.jsp</result>
+        </action>
+        <action name="addfavorite3" class="controller.FavoriteActionSupport" method="favoriteSongOfSearch">
+            <result name="success" >songofsearch.jsp</result>
+        </action>
+        <action name="removefavorite" class="controller.FavoriteActionSupport" method="removeFavoriteSong">
+            <result name="success" >song.jsp</result>
+        </action>
+        <action name="removefavorite2" class="controller.FavoriteActionSupport" method="removeFavoriteSongOfAlbum">
+            <result name="success" >songofalbum.jsp</result>
+        </action>
+        <action name="removefavorite3" class="controller.FavoriteActionSupport" method="removeFavoriteSongOfSearch">
+            <result name="success" >songofsearch.jsp</result>
+        </action>
+        <action name="favorite" class="controller.ListSongActionSupport" method="songOfFavorite">
+            <result name="success">favorite.jsp</result>
+        </action>
+        <action name="usermanager" class="controller.UserManagerActionSupport">
+            <result name="success">usersAdmin.jsp</result>
+        </action>
+        <action name="userdelete" class="controller.UserManagerActionSupport" method="delete">
+            <result name="success">usersAdmin.jsp</result>
+        </action>
+        <action name="opuser" class="controller.UserManagerActionSupport" method="opuser">
+            <result name="success">usersAdmin.jsp</result>
+        </action>
+        <action name="deopuser" class="controller.UserManagerActionSupport" method="deopuser">
+            <result name="success">usersAdmin.jsp</result>
+        </action>        
+        <action name="albummanager" class="controller.ListAlbumActionSupport">
+            <result name="success">albumAdmin.jsp</result>
+        </action>
+        <action name="addalbum" class="controller.AlbumManagerActionSupport">
+            <result name="success">albumAdmin.jsp</result>
+        </action>
+        <action name="edit" class="controller.AlbumManagerActionSupport" method="edit">
+            <result name="success">editAlbum.jsp</result>
+        </action>
+        <action name="editalbum" class="controller.AlbumManagerActionSupport" method="editAlbum">
+            <result name="success">albumAdmin.jsp</result>
+        </action>
+        <action name="deletealbum" class="controller.AlbumManagerActionSupport" method="deleteAlbum">
+            <result name="success">albumAdmin.jsp</result>
+        </action>
+        <action name="songofalbummanager" class="controller.AlbumManagerActionSupport" method="song">
+            <result name="success">songAdmin.jsp</result>
+        </action>
+        <action name="addSong" class="controller.SongManagerActionSupport">
+            <result name="success">songAdmin.jsp</result>
+        </action>
+        <action name="songdelete" class="controller.SongManagerActionSupport" method="delete">
+            <result name="success">songAdmin.jsp</result>
+        </action>
+        <action name="sendalbumid" class="controller.SongManagerActionSupport" method="sendAlbumID">
+            <result name="success">addSong.jsp</result>
+        </action>
+        <action name="edits" class="controller.SongManagerActionSupport" method="edits">
+            <result name="success">editSong.jsp</result>
+        </action>
+        <action name="editsong" class="controller.SongManagerActionSupport" method="editSong">
+            <result name="success">songAdmin.jsp</result>
+        </action>
+        <action name="searchsong" class="controller.SearchActionSupport">
+            <result name="success">songofsearch.jsp</result>
+        </action>
+        
+    </package>
+</struts>
